@@ -1,27 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+/* -------- General ----------- */
+
 body {
   text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
   font-family: 'roboto', sans-serif;
   color: white;
   background-color: #2C3D51;
 }
 
-#wrapper {
-  position: relative !imporant;
-  width: 400px;
-  height: 400px;
-  top: 50%;
-  left: 50%;
-  margin-top: -200px;
-  margin-left: -200px;
-}
-
 a {
   text-decoration: none;
   color: white;
+}
+
+/* -------- wrapper ----------- */
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px;
+}
+
+#wrapper:after {
+  /* insert empty content to compensate for footer */
+  content: "";
+  display: block;
+}
+
+#wrapper:after, footer {
+  font-size: 0.8em;
+  height: 50px;
+}
+
+/* ---------- results ----------- */
+
+#results {
+  max-width: 800px;
+  margin-top: 20px;
 }
 .result {
   font-size: 0.8em;
@@ -29,11 +49,14 @@ a {
   background-color: #E74C3C;
   text-align: left;
   margin-bottom: 20px;
-  transition: 200ms;
+  transition: 100ms;
 }
 .result:hover {
-  transform: scale(1.01);
+  border-left: 5px solid white;
+  transform: scale(1.03);
 }
+
+/* ---------- input ----------- */
 
 input {
   padding: 10px 20px 10px 20px;
@@ -46,7 +69,11 @@ input {
 
 input:focus {
   outline: none;
+  border-color: #E43725;
 }
+
+/* ---------- random button ----------- */
+
 
 #random {
   margin-left: 10px;
@@ -54,4 +81,8 @@ input:focus {
   font-size: 1.3em;
   background: #E74C3C;
   border-radius: 30px;
+}
+
+#random:hover {
+  background: #E43725;
 }
