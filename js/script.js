@@ -25,7 +25,13 @@ function setUrl(input) {
 
 function updateDocument(data) {
   for (i in data.query.pages) {
-      $(results).append("<a target ='_blank' href='" + data.query.pages[i].fullurl + "'><div class='result'><h1>" + data.query.pages[i].title + "</h1><p>" + data.query.pages[i].extract + "</p></div></a>");
+      var link = data.query.pages[i].fullurl;
+      var title = data.query.pages[i].title;
+      var extract = "";
+      if (data.query.pages[i].extract) {
+        extract = data.query.pages[i].extract;
+      }
+      $(results).append("<a target ='_blank' href='" + link + "'><div class='result'><h1>" + title + "</h1><p>" + extract + "</p></div></a>");
     }
   }
 
