@@ -1,2 +1,7 @@
-# freecodecamp-wikipedia-viewer
-Search for wikipedia articles. My contribution to the freecodecamp wikipedia viewer zipline
+# Quickipedia
+Search for wikipedia articles.
+Made to practice api's.
+
+## Demo
+https://codepen.io/Klingefjord/pen/VMWJjR
+
