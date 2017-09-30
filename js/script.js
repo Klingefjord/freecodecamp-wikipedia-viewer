@@ -1,18 +1,13 @@
-//var search = "#searchfield";
-//var results = "#results";
-//var wrap = "#wrapper";
-//var url;
-
 //event handler for searchfield
-$(search).keypress(function(key){
+$("#searchfield").keypress(function(key){
   //if enter is pressed
   if (event.which === 13) {
-    submitSearch($(#searchfield).val());
+    submitSearch($("#searchfield").val());
   }
 });
 
 function submitSearch(input) {
-  $(results).empty(); //empty div
+  $("#results").empty(); //empty div
   $.getJSON(getUrlWithInput(input), function(data){
     updateDocument(data);
   });
@@ -30,13 +25,9 @@ function updateDocument(data) {
       var title = data.query.pages[i].title;
     
       
-      var extract = data.query.pages[i].extract ? data.query.pages[i].extract || "";
-   
-    //  if (data.query.pages[i].extract) {
-    //    extract = data.query.pages[i].extract;
-    //  }
+      var extract = data.query.pages[i].extract ? data.query.pages[i].extract : "";
     
-      $(#results).append(
+      $("#results").append(
         "<a target ='_blank' href='" + link + "'><div class='result'><h1>" 
           + title 
           + "</h1><p>" 
